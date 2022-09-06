@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS STYLES -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME ICONS -->
+    <script src="https://kit.fontawesome.com/51a9d021a9.js" crossorigin="anonymous"></script>
+
+    <title>AVL Tree Visualization</title>
+</head>
+<body>
+
+    <!-- MAIN CONTAINER (WINDOW) -->
+    <div class="main-container">
+        <!-- TITLE BAR -->
+        <div class="titlebar pywebview-drag-region">
+            <div class="close-button" onclick="Close()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div class="title">AVL Tree Visualization</div>
+
+            <div class="help-button">
+                <i class="fa-solid fa-circle-question"></i>
+            </div>
+
+            <div class="help-message">
+                <div><p class="help-title">HELP</p></div>
+                <p class="help-content">This GUI only displays 4 levels maximum. Type something in the input and then press any of the buttons.</p>
+            </div>
+        </div>
+        
+        <!-- CONTENT -->
+        <div class="content-container">
+
+            <!-- OUTPUT CONTAINER -->
+            <div class="output-container">
+                <!-- TREE GRAPH -->
+                <div class="graph" id="tree">
+
+                    <div class="node node-1"><span class="data"></span></div>
+
+                    <div class="node node-2"><span class="data"></span><div class="arrow"></div></div>
+                    <div class="node node-3"><span class="data"></span><div class="arrow"></div></div>
+
+                    <div class="node node-4"><span class="data"></span><div class="arrow"></div></div>
+                    <div class="node node-5"><span class="data"></span><div class="arrow"></div></div>
+                    <div class="node node-6"><span class="data"></span><div class="arrow"></div></div>
+                    <div class="node node-7"><span class="data"></span><div class="arrow"></div></div>
+
+                    <div class="node node-8"><span class="data"></span><div class="arrow"></div></div>
+                    <div class="node node-9"><span class="data"></span><div class="arrow"></div></div>
+                    <div class="node node-10"><span class="data"></span><div class="arrow"></div></div>
+                    <div class="node node-11"><span class="data"></span><div class="arrow"></div></div>
+                    <div class="node node-12"><span class="data"></span><div class="arrow"></div></div>
+                    <div class="node node-13"><span class="data"></span><div class="arrow"></div></div>
+                    <div class="node node-14"><span class="data"></span><div class="arrow"></div></div>
+                    <div class="node node-15"><span class="data"></span><div class="arrow"></div></div>
+
+                    <p id="message-box"></p>
+
+                </div>
+                <div class="output">
+                    <label for="text-output">Output:</label>
+                    <div id="text-output"></div>
+                </div>
+            </div>
+
+            <!-- INPUT CONTAINER -->
+            <div class="input-container">
+                <label for="data">Node data input:</label>
+                <input type="text" id="data" placeholder="Write here..." onkeypress="return onlyNumberKey(event)" maxlength="2">
+                
+                <div class="buttons">
+                    <button id="insert" onclick="AddNode()"><i class="fa-solid fa-plus"></i> Insert</button>
+                    <button id="delete" onclick="DelNode()"><i class="fa-solid fa-minus"></i> Delete</button>
+                    <button id="search" onclick="Search()"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                    <button id="traversal" onclick="PrintLevelOrder()"><i class="fa-solid fa-arrow-down-short-wide"></i> Level Traversal</button>
+                    <button id="height" onclick="getHeight()"><i class="fa-solid fa-arrows-up-down"></i> Height</button>
+                    <button id="grandpa" onclick="getGrandpa()"><i class="fa-solid fa-person-arrow-up-from-line"></i> Grandfather</button>
+                    <button id="uncle" onclick="getUncle()"><i class="fa-solid fa-arrows-down-to-people"></i> Uncle</button>
+                </div>
+
+                <p><a href="https://github.com/manzeloth" target="_blank"><i class="fa-brands fa-github"></i> Github page</a></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- API JS -->
+    <script src="js/api.js"></script>
+    <!-- VALIDATE JS -->
+    <script src="js/validate.js"></script>
+    <!-- DRAW JS -->
+    <script src="js/draw.js"></script>
+</body>
+</html>
