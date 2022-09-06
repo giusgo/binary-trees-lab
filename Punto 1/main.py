@@ -100,4 +100,4 @@ if __name__ == '__main__':
     window_api.set_window(window)
 
     # Start window
-    webview.start(debug=True)
+    webview.start()
